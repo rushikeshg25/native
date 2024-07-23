@@ -5,7 +5,7 @@ export default function PageWrapperView(props) {
     <SafeAreaView
       style={{
         paddingTop:
-          (Platform.OS === 'ios' || !props.isHeaderShown
+          (Platform.OS === 'ios' || props.isHeaderShown
             ? 0
             : StatusBar.currentHeight ?? 0) + 20,
         flex: 1,

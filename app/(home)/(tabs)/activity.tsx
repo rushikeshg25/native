@@ -6,7 +6,7 @@ import PageWrapperView from '@/components/PageWrapperView';
 
 const activity = () => {
   return (
-    <PageWrapperView>
+    <PageWrapperView isHeaderShown={true}>
       <Activity />
     </PageWrapperView>
   );

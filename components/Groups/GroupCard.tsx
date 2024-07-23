@@ -23,7 +23,7 @@ const GroupCard = ({ name, members, owe, id }: GroupProps) => {
   return (
     <Card
       className='grid w-full bg-black border border-white place-content-center rounded-2xl'
-      onPress={() => router.push(`/group/${id}`)}
+      onPress={() => router.push(`/(home)/(tabs)/(group)/${id}`)}
     >
       <Card.Content>
         <View className='flex flex-row justify-between w-full'>

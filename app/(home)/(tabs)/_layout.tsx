@@ -18,7 +18,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name='index'
+        name='(group)'
         options={{
           headerShown: false,
           tabBarIcon: ({ size, color }) => (

@@ -3,8 +3,7 @@ import { Stack } from 'expo-router';
 export default function Layout() {
   return (
     <Stack>
-      <Stack.Screen name='account' />
-      <Stack.Screen name='setting' />
+      <Stack.Screen name='setting' options={{ title: 'Setting' }} />
     </Stack>
   );
 }

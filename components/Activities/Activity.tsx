@@ -9,7 +9,7 @@ function Activity() {
       data={ActivityData}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
-        <View className='mb-6 w-full'>
+        <View className='mb-3 w-full'>
           <View className='flex flex-row flex-start'>
             <Image source={{ uri: item.image }} className='w-12 h-12 mr-4' />
             <View className='flex flex-col flex-1'>

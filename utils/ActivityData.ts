@@ -4,14 +4,14 @@ export const ActivityData = [
     activity: 'You paid Rs.2000 to John',
     image: 'https://picsum.photos/200',
     summary: 'You owe Rs.2000',
-    date: 'Yesterday,8:30pm',
+    date: 'Yesterday, 8:30pm',
   },
   {
     id: '2',
     activity: 'You are owned Rs.550 from Flatmate',
     image: 'https://picsum.photos/200',
     summary: 'You get back Rs.550',
-    date: '6 days ago,7:00am',
+    date: '6 days ago, 7:00am',
   },
   {
     id: '3',

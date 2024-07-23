@@ -5,7 +5,7 @@ import Activity from '@/components/Activities/Activity';
 
 const activity = () => {
   return (
-    <View className='flex flex-col h-screen bg-black px-6 py-10'>
+    <View className='flex flex-col h-screen px-6 py-10 bg-black'>
       <View className='flex flex-row justify-between w-full mb-10'>
         <Text className='text-3xl font-bold'>Activity</Text>
       </View>

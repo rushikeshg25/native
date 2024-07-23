@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import Group from '@/components/Groups/Group';
+import GroupCard from '@/components/Groups/GroupCard';
 import Avatar from '@/components/Avatar';
 import { GroupData } from '@/utils/GroupData';
 
@@ -25,8 +25,9 @@ export default function App() {
       </View>
       <View className='flex flex-col w-full gap-5'>
         {GroupData.map((group, i) => (
-          <View key={i} className=' w-full'>
-            <Group
+          <View key={i} className='w-full '>
+            <GroupCard
+              id={group.id as string}
               key={i}
               name={group.name}
               members={group.members}
@@ -35,6 +36,7 @@ export default function App() {
           </View>
         ))}
       </View>
+      <View className='flex w-full '></View>
       <StatusBar style='auto' />
     </ScrollView>
   );

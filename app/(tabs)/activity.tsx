@@ -1,15 +1,15 @@
 import { View } from 'react-native';
+import { Text } from 'react-native-paper';
 import React from 'react';
-
-import { Switch } from 'react-native-paper';
+import Activity from '@/components/Activities/Activity';
 
 const activity = () => {
-  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
-
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   return (
-    <View className='flex items-center justify-center h-screen'>
-      <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
+    <View className='flex flex-col h-screen bg-black px-6 py-10'>
+      <View className='flex flex-row justify-between w-full mb-10'>
+        <Text className='text-3xl font-bold'>Activity</Text>
+      </View>
+      <Activity />
     </View>
   );
 };

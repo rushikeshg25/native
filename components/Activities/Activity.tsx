@@ -10,7 +10,7 @@ function Activity() {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <View className='w-full mb-6'>
-          <View className='flex flex-row flex-start'>
+          <View className='flex flex-row items-center flex-start'>
             <Image source={{ uri: item.image }} className='w-12 h-12 mr-4' />
             <View className='flex flex-col flex-1'>
               <Text className='flex-wrap text-white text-l'>
@@ -18,7 +18,9 @@ function Activity() {
               </Text>
               <Text
                 className={`text-xl ${
-                  item.summary === ' owe ' ? 'text-red-500' : 'text-green-500'
+                  item.summary.includes('owe')
+                    ? 'text-green-500'
+                    : 'text-red-500'
                 }`}
               >
                 {item.summary}

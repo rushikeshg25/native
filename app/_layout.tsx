@@ -55,8 +55,7 @@ export default function RootLayout() {
     <PaperProvider theme={paperTheme}>
       <ThemeProvider value={paperTheme}>
         <Stack>
-          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-          <Stack.Screen name='(setting)' options={{ headerShown: false }} />
+          <Stack.Screen name='(home)' options={{ headerShown: false }} />
           <Stack.Screen name='+not-found' />
         </Stack>
         <FloatingButton />

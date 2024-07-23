@@ -2,9 +2,8 @@ import { View } from 'react-native';
 import React from 'react';
 import { Image } from 'expo-image';
 import { Entypo } from '@expo/vector-icons';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { Button, Card, Text } from 'react-native-paper';
-import { Link } from 'expo-router';
+import { Card, Text } from 'react-native-paper';
+import { useRouter } from 'expo-router';
 
 type Member = {
   id: string;
@@ -19,8 +18,13 @@ interface GroupProps {
 }
 
 const GroupCard = ({ name, members, owe, id }: GroupProps) => {
+  const navLink = `/group/${id}`;
+  const router = useRouter();
   return (
-    <Card className='grid w-full bg-black border border-white place-content-center rounded-2xl'>
+    <Card
+      className='grid w-full bg-black border border-white place-content-center rounded-2xl'
+      onPress={() => router.push(`/group/${id}`)}
+    >
       <Card.Content>
         <View className='flex flex-row justify-between w-full'>
           <View className='relative flex flex-row'>
@@ -51,9 +55,6 @@ const GroupCard = ({ name, members, owe, id }: GroupProps) => {
             </Text>
           </View>
           <View className='flex flex-row items-end justify-center gap-3'>
-            <Link href={`/group/${id}`}>
-              <Text className='dark:text-white '>View</Text>
-            </Link>
             <View className='flex flex-row items-end justify-center gap-1'>
               <Text className='text-green-400 '>Add Expense</Text>
             </View>

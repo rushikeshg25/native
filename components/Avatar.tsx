@@ -1,12 +1,48 @@
-import { Text, View } from "react-native";
-import React from "react";
+import React from 'react';
+import {
+  View,
+  Image,
+  StyleSheet,
+  ImageSourcePropType,
+  ViewStyle,
+  ImageStyle,
+} from 'react-native';
 
-const Avatar = () => {
+interface CustomIconProps {
+  source: ImageSourcePropType;
+  size: number;
+  style?: ViewStyle | ImageStyle;
+}
+
+const Avatar: React.FC<CustomIconProps> = ({ source, size = 10, style }) => {
   return (
-    <View className='rounded-full border-2 h-10 w-10  bg-gray-100 flex items-center justify-center'>
-      <Text className='font-bold text-xl'>RG</Text>
+    <View
+      style={[
+        styles.container,
+        { width: size, height: size, borderRadius: size / 2 },
+        style,
+      ]}
+    >
+      <Image
+        source={source}
+        style={[
+          styles.image,
+          { width: size, height: size, borderRadius: size / 2 },
+        ]}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    resizeMode: 'cover',
+  },
+});
 
 export default Avatar;

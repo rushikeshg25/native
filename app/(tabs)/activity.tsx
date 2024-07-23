@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { ProgressBar, MD3Colors } from "react-native-paper";
+import { View } from 'react-native';
+import React from 'react';
 
-import { Switch } from "react-native-paper";
+import { Switch } from 'react-native-paper';
 
 const activity = () => {
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
@@ -16,5 +15,3 @@ const activity = () => {
 };
 
 export default activity;
-
-const styles = StyleSheet.create({});

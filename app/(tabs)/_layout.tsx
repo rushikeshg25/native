@@ -1,55 +1,54 @@
-import { Tabs } from "expo-router";
-import React from "react";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import Feather from "@expo/vector-icons/Feather";
-import Avatar from "@/components/Avatar";
+import { Tabs } from 'expo-router';
+import React from 'react';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import Feather from '@expo/vector-icons/Feather';
+import Avatar from '@/components/Avatar';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        headerShown: false,
-      }}
-    >
+    <Tabs>
       <Tabs.Screen
-        name='groups'
+        name='index'
         options={{
-          title: "Groups",
-          tabBarIcon: ({ color, focused }) => (
-            <FontAwesome6 name='user-group' size={24} color={color} />
+          title: 'Groups',
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome6 name='user-group' size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name='friends'
         options={{
-          title: "Friends",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name='person' size={24} color={color} />
+          title: 'Friends',
+          tabBarIcon: ({ size, color }) => (
+            <Ionicons name='person' size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name='activity'
         options={{
-          title: "Activity",
-          tabBarIcon: ({ color, focused }) => (
-            <Feather name='activity' size={24} color={color} />
+          title: 'Activity',
+          tabBarIcon: ({ size, color }) => (
+            <Feather name='activity' size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name='account'
+        name='(account)'
         options={{
-          title: "account",
-          tabBarIcon: ({ color, focused }) => <Avatar />,
+          headerShown: false,
+          title: 'Account',
+          tabBarIcon: ({ color, size }) => (
+            <Avatar
+              source={{
+                uri: 'https://userpic.codeforces.org/2074766/title/7c6bd92a5d4bdad.jpg',
+              }}
+              size={size}
+              style={{ borderColor: color, borderWidth: 1 }}
+            />
+          ),
         }}
       />
     </Tabs>

@@ -9,11 +9,13 @@ function Activity() {
       data={ActivityData}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
-        <View className='mb-3 w-full'>
+        <View className='w-full mb-6'>
           <View className='flex flex-row flex-start'>
             <Image source={{ uri: item.image }} className='w-12 h-12 mr-4' />
             <View className='flex flex-col flex-1'>
-              <Text className='text-l flex-wrap'>{item.activity}</Text>
+              <Text className='flex-wrap text-white text-l'>
+                {item.activity}
+              </Text>
               <Text
                 className={`text-xl ${
                   item.summary === ' owe ' ? 'text-red-500' : 'text-green-500'
@@ -21,7 +23,7 @@ function Activity() {
               >
                 {item.summary}
               </Text>
-              <Text className='text-gray-400 text-sm'>{item.date}</Text>
+              <Text className='text-sm text-gray-400'>{item.date}</Text>
             </View>
           </View>
         </View>

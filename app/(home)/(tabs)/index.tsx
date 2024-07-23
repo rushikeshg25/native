@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import { Text } from 'react-native-paper';
-import Group from '@/components/Groups/Group';
+import { Button, Text } from 'react-native-paper';
+import GroupCard from '@/components/Groups/GroupCard';
 import Avatar from '@/components/Avatar';
+import { Link, useNavigation } from 'expo-router';
 import { GroupData } from '@/utils/GroupData';
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <ScrollView>
       <View className='flex flex-row justify-between w-full'>
@@ -25,8 +27,9 @@ export default function App() {
       </View>
       <View className='flex flex-col w-full gap-5'>
         {GroupData.map((group, i) => (
-          <View key={i} className=' w-full'>
-            <Group
+          <View key={i} className='w-full '>
+            <GroupCard
+              id={group.id as string}
               key={i}
               name={group.name}
               members={group.members}
@@ -34,6 +37,17 @@ export default function App() {
             />
           </View>
         ))}
+        <Link href='/add-group'>
+          <Button
+            className='flex flex-row items-center w-fit'
+            mode='elevated'
+            onPress={() => {
+              // navigation.navigate('/');   //To Navigate to Add group page
+            }}
+          >
+            Create New Group
+          </Button>
+        </Link>
       </View>
       <StatusBar style='auto' />
     </ScrollView>

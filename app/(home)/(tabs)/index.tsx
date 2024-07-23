@@ -6,11 +6,12 @@ import GroupCard from '@/components/Groups/GroupCard';
 import Avatar from '@/components/Avatar';
 import { Link, useNavigation } from 'expo-router';
 import { GroupData } from '@/utils/GroupData';
+import PageWrapperView from '@/components/PageWrapperView';
 
 export default function App() {
   const navigation = useNavigation();
   return (
-    <ScrollView>
+    <PageWrapperView>
       <View className='flex flex-row justify-between w-full'>
         <View className='mb-10'>
           <Text className='text-5xl font-bold'>Groups</Text>
@@ -50,6 +51,6 @@ export default function App() {
         </Link>
       </View>
       <StatusBar style='auto' />
-    </ScrollView>
+    </PageWrapperView>
   );
 }

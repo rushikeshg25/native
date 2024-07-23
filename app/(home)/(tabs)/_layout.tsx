@@ -7,11 +7,20 @@ import Avatar from '@/components/Avatar';
 
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: 'transparent',
+          shadowColor: 'transparent',
+          elevation: 0,
+        },
+        headerShadowVisible: false,
+      }}
+    >
       <Tabs.Screen
         name='index'
         options={{
-          title: 'Groups',
+          headerShown: false,
           tabBarIcon: ({ size, color }) => (
             <FontAwesome6 name='user-group' size={size} color={color} />
           ),

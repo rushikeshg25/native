@@ -12,7 +12,7 @@ export default function Account() {
       <Link href={'/(tabs)/(account)/setting'} asChild>
         <Button>Go to settings in account</Button>
       </Link>
-      <Link href={'/(home)/(modal)/modal'} asChild>
+      <Link href={'/(home)/(modal)/addExpense'} asChild>
         <Button>Add expense modal</Button>
       </Link>
     </View>

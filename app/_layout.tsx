@@ -63,6 +63,7 @@ export default function RootLayout() {
           <Stack.Screen name='+not-found' />
         </Stack>
         {isVisible && <FloatingButton />}
+        <Text className='text-black'>{path}</Text>
       </ThemeProvider>
     </PaperProvider>
   );

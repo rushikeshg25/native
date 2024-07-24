@@ -1,6 +1,7 @@
 import { usePathname } from 'expo-router';
 
-const BUTTON_HIDDEN_PATHS = ['/addExpense', '/account'];
+const BUTTON_VISIBLE_PATHS = ['/group', '/friends', '/activity'];
+const GROUP_PATH = '/group';
 
 export function useFloatingButtonVisiblity(): {
   isVisible: boolean;
@@ -8,9 +9,12 @@ export function useFloatingButtonVisiblity(): {
 } {
   const pathname = usePathname();
 
-  if (BUTTON_HIDDEN_PATHS.includes(pathname)) {
-    return { isVisible: false, path: pathname };
+  if (
+    BUTTON_VISIBLE_PATHS.includes(pathname) ||
+    pathname.startsWith(GROUP_PATH)
+  ) {
+    return { isVisible: true, path: pathname };
   }
 
-  return { isVisible: true, path: pathname };
+  return { isVisible: false, path: pathname };
 }

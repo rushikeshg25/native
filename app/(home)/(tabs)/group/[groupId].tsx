@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Stack, useLocalSearchParams, useNavigation } from 'expo-router';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { Button, Card, Text, useTheme, Menu } from 'react-native-paper';
+import { Button, Card, Text, Menu } from 'react-native-paper';
 import { GroupData } from '@/utils/GroupData';
 import DayExpenseCard from '@/components/Groups/DayExpenseCard';
 
 const Group = () => {
   const { groupId } = useLocalSearchParams();
   const group = GroupData.find((g) => g.id === groupId);
-  const { dark } = useTheme();
-  const navigation = useNavigation();
   const [visible, setVisible] = useState(false);
   const openMenu = () => setVisible(true);
   const closeMenu = () => setVisible(false);

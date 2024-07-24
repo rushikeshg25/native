@@ -18,12 +18,11 @@ interface GroupProps {
 }
 
 const GroupCard = ({ name, members, owe, id }: GroupProps) => {
-  const navLink = `/group/${id}`;
   const router = useRouter();
   return (
     <Card
       className='grid w-full bg-black border border-white place-content-center rounded-2xl'
-      onPress={() => router.push(`/(home)/(tabs)/(group)/${id}`)}
+      onPress={() => router.push(`/group/${id}`)}
     >
       <Card.Content>
         <View className='flex flex-row justify-between w-full'>

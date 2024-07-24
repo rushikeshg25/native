@@ -5,6 +5,7 @@ export default function Layout() {
     <Stack>
       <Stack.Screen name='setting' options={{ title: 'Setting' }} />
       <Stack.Screen name='addExpense' options={{ title: 'Add Expense' }} />
+      <Stack.Screen name='scan' options={{ title: 'Scan' }} />
     </Stack>
   );
 }

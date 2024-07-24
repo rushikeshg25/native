@@ -1,12 +1,14 @@
-import { Image, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { Text, Divider } from 'react-native-paper';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Entypo from '@expo/vector-icons/Entypo';
+import { useRouter } from 'expo-router';
 
 export default function Account() {
+  const router = useRouter();
   return (
     <View className='flex flex-col justify-center gap-3 p-2 px-6 my-3'>
       <View className='flex flex-row items-center justify-between '>
@@ -34,12 +36,17 @@ export default function Account() {
         </View>
       </View>
       <Divider className='-mb-3' />
-      <View className='flex flex-row gap-4'>
+      <Pressable
+        className='flex flex-row gap-4'
+        onPress={() => {
+          router.push('/scan');
+        }}
+      >
         <Ionicons name='qr-code-outline' size={35} color='white' />
         <View className='flex items-center justify-center'>
           <Text className='text-lg font-light text-gray-200 '>Scan Code</Text>
         </View>
-      </View>
+      </Pressable>
       <Text className='-mb-3 font-light text-gray-200'>Preferences</Text>
       <View className='flex flex-row gap-4'>
         <AntDesign name='notification' size={35} color='white' />

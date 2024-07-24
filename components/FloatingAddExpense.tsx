@@ -10,7 +10,7 @@ const FloatingButton = () => {
       style={styles.fab}
       label='Add Expense'
       onPress={() => {
-        router.push('/(home)/(modal)/addExpense'); //Add Expense Path goes here
+        router.push('/addExpense');
       }}
     />
   );

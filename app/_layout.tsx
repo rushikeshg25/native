@@ -8,8 +8,10 @@ import {
   MD3DarkTheme,
   MD3LightTheme,
   PaperProvider,
+  Text,
   adaptNavigationTheme,
 } from 'react-native-paper';
+import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
 import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
@@ -51,6 +53,8 @@ export default function RootLayout() {
     return null;
   }
 
+  const { isVisible, path } = useFloatingButtonVisiblity();
+
   return (
     <PaperProvider theme={paperTheme}>
       <ThemeProvider value={paperTheme}>
@@ -58,7 +62,7 @@ export default function RootLayout() {
           <Stack.Screen name='(home)' options={{ headerShown: false }} />
           <Stack.Screen name='+not-found' />
         </Stack>
-        <FloatingButton />
+        {isVisible && <FloatingButton />}
       </ThemeProvider>
     </PaperProvider>
   );

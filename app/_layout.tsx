@@ -19,7 +19,6 @@ import {
 } from '@react-navigation/native';
 import { Colors } from '@/constants/Colors';
 import merge from 'deepmerge';
-import FloatingButton from '@/components/FloatingAddExpense';
 
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,
@@ -53,8 +52,6 @@ export default function RootLayout() {
     return null;
   }
 
-  const { isVisible, path } = useFloatingButtonVisiblity();
-
   return (
     <PaperProvider theme={paperTheme}>
       <ThemeProvider value={paperTheme}>
@@ -63,7 +60,6 @@ export default function RootLayout() {
           <Stack.Screen name='(home)' options={{ headerShown: false }} />
           <Stack.Screen name='+not-found' />
         </Stack>
-        {isVisible && <FloatingButton />}
       </ThemeProvider>
     </PaperProvider>
   );

@@ -26,7 +26,7 @@ export default function TabLayout() {
           name='group'
           options={{
             title: 'Groups',
-            headerShown: false,
+            headerShown: true,
             tabBarIcon: ({ size, color }) => (
               <FontAwesome6 name='user-group' size={size} color={color} />
             ),

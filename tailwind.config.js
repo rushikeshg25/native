@@ -9,6 +9,8 @@ module.exports = {
       colors: {
         'purple-light': 'rgb(120, 69, 172)',
         'purple-dark': 'rgb(220, 184, 255)',
+        'border-dark': 'rgb(150, 142, 152)',
+        'border-light': 'rgb(220, 214, 222)',
       },
     },
   },

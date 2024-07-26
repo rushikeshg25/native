@@ -1,8 +1,9 @@
-import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useState } from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
 import { Button } from 'react-native-paper';
 import { SegmentedButtons } from 'react-native-paper';
+import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 
 const BUTTONS = [
   {
@@ -21,8 +22,8 @@ export default function App() {
   const [barcodeResult, setBarcodeResult] = useState('');
 
   if (!permission) {
-    // Camera permissions are still loading.
-    return <View />;
+    // Camera permissions are loading.
+    return <ActivityIndicator animating={true} color={MD2Colors.purple300} />;
   }
 
   if (!permission.granted) {

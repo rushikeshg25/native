@@ -10,7 +10,6 @@ const ScrollableCard = ({
   children: React.ReactNode;
   classname?: string;
 }) => {
-  console.log(classname);
   return (
     <ScrollView className={cn('rounded-t-3xl pb-20 ', classname)}>
       {children}

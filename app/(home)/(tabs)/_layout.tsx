@@ -8,7 +8,7 @@ import FloatingButton from '@/components/FloatingAddExpense';
 import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
 
 export default function TabLayout() {
-  const { isVisible, path } = useFloatingButtonVisiblity();
+  const { isVisible } = useFloatingButtonVisiblity();
 
   return (
     <>

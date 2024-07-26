@@ -1,7 +1,6 @@
 import { View } from 'react-native';
 import React from 'react';
 import { Image } from 'expo-image';
-import { Entypo } from '@expo/vector-icons';
 import { Card, Text } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
@@ -19,6 +18,7 @@ interface GroupProps {
 
 const GroupCard = ({ name, members, owe, id }: GroupProps) => {
   const router = useRouter();
+  // const membersList=
   return (
     <Card
       className='grid w-full bg-black border border-border-light dark:border-border-dark place-content-center rounded-2xl'

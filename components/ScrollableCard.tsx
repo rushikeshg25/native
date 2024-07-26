@@ -1,4 +1,3 @@
-import { Text, View } from 'react-native';
 import React from 'react';
 import { cn } from '@/utils/tw-merge';
 import { ScrollView } from 'react-native';

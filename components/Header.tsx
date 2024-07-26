@@ -1,0 +1,82 @@
+import { View, Text, TouchableOpacity, Pressable } from 'react-native';
+import React, { useState } from 'react';
+import { Searchbar } from 'react-native-paper';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useTheme } from 'react-native-paper';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { useRouter } from 'expo-router';
+
+interface Props {
+  page: 'groups' | 'friends' | 'activity' | 'account' | 'group';
+}
+
+const Header = ({ page }: Props) => {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] = useState(false);
+  const onLoadingQuery = () => {};
+  const { dark } = useTheme();
+
+  switch (page) {
+    case 'groups':
+      return (
+        <View className='flex flex-row items-center justify-between w-full px-2 '>
+          <Searchbar
+            className='w-3/5 '
+            style={{ height: 40 }}
+            placeholder='Search'
+            onChangeText={setSearchQuery}
+            value={searchQuery}
+            loading={loading}
+            inputStyle={{
+              minHeight: 0, // Add this
+            }}
+          />
+          <TouchableOpacity onPress={() => {}}>
+            <MaterialCommunityIcons
+              name='qrcode-scan'
+              size={24}
+              color={dark ? 'white' : 'black'}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              router.push('/create-group');
+            }}
+          >
+            <AntDesign
+              name='pluscircleo'
+              size={24}
+              color={dark ? 'white' : 'black'}
+            />
+          </TouchableOpacity>
+          {/* // TODO: Add filter logic (Drawer) */}
+          <TouchableOpacity onPress={() => {}}>
+            <AntDesign
+              name='filter'
+              size={24}
+              color={dark ? 'white' : 'black'}
+            />
+          </TouchableOpacity>
+        </View>
+      );
+    case 'friends':
+      return (
+        <View className='flex flex-row justify-between w-full px-3'></View>
+      );
+    case 'activity':
+      return (
+        <View className='flex flex-row justify-between w-full px-3'></View>
+      );
+    case 'account':
+      return (
+        <View className='flex flex-row justify-between w-full px-3'></View>
+      );
+    case 'group':
+      return (
+        <View className='flex flex-row justify-between w-full px-3'></View>
+      );
+  }
+};
+
+export default Header;

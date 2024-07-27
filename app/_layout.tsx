@@ -8,10 +8,8 @@ import {
   MD3DarkTheme,
   MD3LightTheme,
   PaperProvider,
-  Text,
   adaptNavigationTheme,
 } from 'react-native-paper';
-import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
 import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,

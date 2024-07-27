@@ -67,6 +67,72 @@ export const GroupData = [
     owe: 2000,
   },
   {
+    id: 1,
+    name: 'Group 1',
+    members: [
+      {
+        id: '1',
+        name: 'Member 1',
+        image: 'https://picsum.photos/200',
+      },
+      {
+        id: '2',
+        name: 'Member 2',
+        image: 'https://picsum.photos/200',
+      },
+      {
+        id: '3',
+        name: 'Member 3',
+        image: 'https://picsum.photos/200',
+      },
+    ],
+    owe: 2000,
+  },
+  {
+    id: 1,
+    name: 'Group 1',
+    members: [
+      {
+        id: '1',
+        name: 'Member 1',
+        image: 'https://picsum.photos/200',
+      },
+      {
+        id: '2',
+        name: 'Member 2',
+        image: 'https://picsum.photos/200',
+      },
+      {
+        id: '3',
+        name: 'Member 3',
+        image: 'https://picsum.photos/200',
+      },
+    ],
+    owe: 2000,
+  },
+  {
+    id: 1,
+    name: 'Group 1',
+    members: [
+      {
+        id: '1',
+        name: 'Member 1',
+        image: 'https://picsum.photos/200',
+      },
+      {
+        id: '2',
+        name: 'Member 2',
+        image: 'https://picsum.photos/200',
+      },
+      {
+        id: '3',
+        name: 'Member 3',
+        image: 'https://picsum.photos/200',
+      },
+    ],
+    owe: 2000,
+  },
+  {
     id: '2',
     name: 'Group 2',
     members: [

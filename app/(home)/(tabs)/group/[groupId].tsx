@@ -4,6 +4,7 @@ import { Stack, useLocalSearchParams, useNavigation } from 'expo-router';
 import { Button, Card, Text, Menu } from 'react-native-paper';
 import { GroupData } from '@/utils/GroupData';
 import DayExpenseCard from '@/components/Groups/DayExpenseCard';
+import GroupHeader from '@/components/Header';
 
 const Group = () => {
   const { groupId } = useLocalSearchParams();
@@ -15,8 +16,9 @@ const Group = () => {
     <>
       <Stack.Screen
         options={{
+          headerShown: true,
+          headerTitle: () => <GroupHeader page='group' />,
           title: 'group',
-          headerRight: () => <Text className='text-lg'>Edit</Text>,
         }}
       />
       <View className='flex flex-col h-full '>

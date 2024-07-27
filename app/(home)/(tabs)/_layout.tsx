@@ -6,9 +6,10 @@ import Feather from '@expo/vector-icons/Feather';
 import Avatar from '@/components/Avatar';
 import FloatingButton from '@/components/FloatingAddExpense';
 import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
+import Header from '@/components/Header';
 
 export default function TabLayout() {
-  const { isVisible, path } = useFloatingButtonVisiblity();
+  const { isVisible } = useFloatingButtonVisiblity();
 
   return (
     <>
@@ -25,8 +26,8 @@ export default function TabLayout() {
         <Tabs.Screen
           name='group'
           options={{
-            title: 'Groups',
-            headerShown: true,
+            headerTitle: () => <Header page='groups' />,
+            headerShown: false,
             tabBarIcon: ({ size, color }) => (
               <FontAwesome6 name='user-group' size={size} color={color} />
             ),

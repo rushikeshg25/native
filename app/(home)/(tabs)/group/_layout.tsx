@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import { Stack } from 'expo-router';
 
 export default function Layout() {
@@ -13,7 +14,8 @@ export default function Layout() {
       <Stack.Screen
         name='index'
         options={{
-          headerShown: false,
+          headerTitle: () => <Header page='groups' />,
+          headerShown: true,
           title: 'Groups',
         }}
       />

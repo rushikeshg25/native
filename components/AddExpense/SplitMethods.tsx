@@ -200,7 +200,7 @@ const TopInfoBar = ({ method }) => {
             setCurrentFont(currentFont - 1);
           }
         }}
-        theme={{ colors: { onSurface: theme.colors.primary } }}
+        theme={{ colors: { onSurface: theme.colors.onSurfaceDisabled } }}
         variant='headlineSmall'
       >
         {getTextFromMethod(method)}

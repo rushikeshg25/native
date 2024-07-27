@@ -1,12 +1,19 @@
-import { useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { StyleProp, StyleSheet, TextStyle } from 'react-native';
+import { TextInput, TextInputProps } from 'react-native-paper';
 
-export default function CalculatorInput({ customStyles }) {
-  const [input, setInput] = useState('');
-
-  const changeHandler = (e) => {
-    setInput(e);
+export default function CalculatorInput({
+  customStyles = {},
+  customProps = {},
+  input,
+  setInput,
+}: {
+  customStyles: StyleProp<TextStyle> | undefined;
+  customProps?: TextInputProps;
+  input: string | number;
+  setInput: Function;
+}) {
+  const changeHandler = (text) => {
+    setInput(text);
   };
 
   return (
@@ -15,16 +22,19 @@ export default function CalculatorInput({ customStyles }) {
       onChangeText={changeHandler}
       placeholder='0.00'
       keyboardType='numeric'
-      style={{ ...styles.input, ...customStyles }}
+      allowFontScaling={false}
+      style={[styles.input, customStyles]}
+      {...customProps}
     />
   );
 }
 
 const styles = StyleSheet.create({
   input: {
-    marginBottom: 20,
     fontSize: 40,
     fontWeight: 'semibold',
-    backgroundColor: 'none',
+    backgroundColor: 'transparent',
+    paddingHorizontal: 8,
+    paddingVertical: 0,
   },
 });

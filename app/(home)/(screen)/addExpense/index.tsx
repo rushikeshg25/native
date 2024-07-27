@@ -1,26 +1,28 @@
 import CurrencyButton from '@/components/Button/CurrencyButton';
 import CalculatorInput from '@/components/Input/CalculatorInput';
+import { Link } from 'expo-router';
 import { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text, TextInput } from 'react-native-paper';
+import { Text, TextInput, Button } from 'react-native-paper';
 
 const Header = () => {
-  return (
-    <View style={styles.headerContainer}>
-    </View>
-  );
+  return <View style={styles.headerContainer}></View>;
 };
 
 const SplitCategory = () => {
   return (
     <View style={styles.splitCategoryContainer}>
-      <Text>Split category</Text>
+      <Link href={'/addExpense/adjustSplit'}>
+        <Text>split method</Text>
+      </Link>
     </View>
   );
 };
 
 export default function ExpenseModal() {
   const [description, setDescription] = useState('');
+  const [input, setInput] = useState('');
+
   return (
     <>
       <View style={styles.container}>
@@ -34,7 +36,11 @@ export default function ExpenseModal() {
                 contentStyle: styles.currencyButtonStyle,
               }}
             />
-            <CalculatorInput customStyles={styles.calcInput} />
+            <CalculatorInput
+              customStyles={styles.calcInput}
+              input={input}
+              setInput={setInput}
+            />
           </View>
 
           <TextInput

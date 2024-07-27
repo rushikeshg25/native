@@ -5,6 +5,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useTheme } from 'react-native-paper';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useRouter } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Props {
   page: 'groups' | 'friends' | 'activity' | 'account' | 'group';
@@ -20,7 +21,7 @@ const Header = ({ page }: Props) => {
   switch (page) {
     case 'groups':
       return (
-        <View className='flex flex-row items-center justify-between w-full px-2 '>
+        <SafeAreaView className='flex flex-row items-center justify-between w-full p-4 '>
           <Searchbar
             className='w-3/5 '
             style={{ height: 40 }}
@@ -58,7 +59,7 @@ const Header = ({ page }: Props) => {
               color={dark ? 'white' : 'black'}
             />
           </TouchableOpacity>
-        </View>
+        </SafeAreaView>
       );
     case 'friends':
       return (

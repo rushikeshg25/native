@@ -14,7 +14,7 @@ export default function Layout() {
       <Stack.Screen
         name='index'
         options={{
-          headerTitle: () => <Header page='groups' />,
+          header: () => <Header page='groups' />,
           headerShown: true,
           title: 'Groups',
         }}

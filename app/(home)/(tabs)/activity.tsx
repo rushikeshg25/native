@@ -1,38 +1,36 @@
 import PageWrapperView from '@/components/PageWrapperView';
-import React from 'react';
-import { FlatList, View, Image } from 'react-native';
+import { View } from 'react-native';
 import { Text } from 'react-native-paper';
-import { ActivityData } from '@/utils/ActivityData';
+import ScrollableCard from '@/components/ScrollableCard';
+import ActivityList from '@/components/ActivityList';
+import { SortButton } from '@/components/Button/SortButton';
 
 const activity = () => {
   return (
-    <PageWrapperView isHeaderShown={true}>
-      <FlatList
-        data={ActivityData}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View className='w-full mb-6'>
-            <View className='flex flex-row items-center flex-start'>
-              <Image source={{ uri: item.image }} className='w-12 h-12 mr-4' />
-              <View className='flex flex-col flex-1'>
-                <Text className='flex-wrap text-white text-l'>
-                  {item.activity}
-                </Text>
-                <Text
-                  className={`text-xl ${
-                    item.summary.includes('owe')
-                      ? 'text-green-500'
-                      : 'text-red-500'
-                  }`}
-                >
-                  {item.summary}
-                </Text>
-                <Text className='text-sm text-gray-400'>{item.date}</Text>
-              </View>
-            </View>
+    <PageWrapperView isHeaderShown={true} classname='flex-1'>
+      <View className='flex flex-col px-3 py-2 '>
+        <View className='flex flex-row justify-between items-center w-full mb-6'>
+          <Text className='text-3xl font-bold'>Activity</Text>
+          <View className='flex flex-row items-center'>
+            <SortButton />
           </View>
-        )}
-      />
+        </View>
+      </View>
+      <ScrollableCard classname='px-3 pt-3 bg-white dark:bg-gray-800'>
+        <View className='flex flex-row justify-between w-full px-3 mt-2 mb-4'>
+          <View className='flex flex-col'>
+            <Text className='-mb-1 text-lg font-semibold'>
+              Overall,You owe{' '}
+              <Text className='text-lg font-bold text-red-400'>Rs.5000</Text>
+            </Text>
+            <Text className='-mt-1 text-lg font-semibold'>
+              and you are owned{' '}
+              <Text className='text-lg font-bold text-green-400'>Rs.3000</Text>
+            </Text>
+          </View>
+        </View>
+        <ActivityList />
+      </ScrollableCard>
     </PageWrapperView>
   );
 };

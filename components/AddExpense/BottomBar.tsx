@@ -3,7 +3,7 @@ import { useTheme, Appbar } from 'react-native-paper';
 
 export const BOTTOM_APPBAR_HEIGHT = 50;
 
-export default function BottomBar({ bottomInset }) {
+export default function BottomBar({ bottomInset }: { bottomInset: number }) {
   const theme = useTheme();
 
   return (

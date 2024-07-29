@@ -18,7 +18,20 @@ export const splitMethods = {
   SHARES: 'shares',
 };
 
-export default function SplitMethod({ method, superHeroes, loading }) {
+interface Hero {
+  name: string;
+  image: string;
+}
+
+export default function SplitMethod({
+  method,
+  superHeroes,
+  loading,
+}: {
+  method: string;
+  superHeroes: Hero[];
+  loading: boolean;
+}) {
   const { bottom } = useSafeAreaInsets();
   const [currency, setCurrency] = useState<string>('₹');
 
@@ -81,7 +94,13 @@ const MIN_FONT_SIZE = 12;
 const MAX_CHAR_LIMIT = 10;
 const LENGTH_THRESHOLD = 7;
 
-const InputMethod = ({ method, currency }) => {
+const InputMethod = ({
+  method,
+  currency,
+}: {
+  method: string;
+  currency: string;
+}) => {
   switch (method) {
     case splitMethods.EQUAL:
       return (
@@ -99,7 +118,7 @@ const InputMethod = ({ method, currency }) => {
   }
 };
 
-const AmountSplitInput = ({ currency }) => {
+const AmountSplitInput = ({ currency }: { currency: string }) => {
   const [input, setInput] = useState<string>('');
   const [fontSize, setFontSize] = useState(MAX_FONT_SIZE);
 
@@ -184,7 +203,7 @@ const SharesSplitInput = () => {
   );
 };
 
-const TopInfoBar = ({ method }) => {
+const TopInfoBar = ({ method }: { method: string }) => {
   const theme = useTheme();
   const [currentFont, setCurrentFont] = useState(MAX_FONT_SIZE);
 
@@ -209,7 +228,7 @@ const TopInfoBar = ({ method }) => {
   );
 };
 
-const getTextFromMethod = (method) => {
+const getTextFromMethod = (method: string) => {
   switch (method) {
     case splitMethods.EQUAL:
       return 'Equal share, equal care';

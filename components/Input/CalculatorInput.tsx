@@ -12,13 +12,13 @@ export default function CalculatorInput({
   input: string | number;
   setInput: Function;
 }) {
-  const changeHandler = (text) => {
+  const changeHandler = (text: string) => {
     setInput(text);
   };
 
   return (
     <TextInput
-      value={input}
+      value={input as string}
       onChangeText={changeHandler}
       placeholder='0.00'
       keyboardType='numeric'

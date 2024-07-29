@@ -3,7 +3,7 @@ This is just a temprory data generator for profiles
 we should not use this in production app
 or maybe we can use :P
 */
-const fetchSuperHeroProfile = async (character_id) => {
+const fetchSuperHeroProfile = async (character_id: number) => {
   try {
     const response = await fetch(
       'https://www.superheroapi.com/api.php/883549028812063/' + character_id,

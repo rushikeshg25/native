@@ -3,7 +3,8 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { useColorScheme } from 'react-native';
+import { Text, useColorScheme, View } from 'react-native';
+import { RootSiblingParent } from 'react-native-root-siblings';
 import {
   MD3DarkTheme,
   MD3LightTheme,
@@ -17,6 +18,7 @@ import {
 } from '@react-navigation/native';
 import { Colors } from '@/constants/Colors';
 import merge from 'deepmerge';
+import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
 
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,
@@ -50,14 +52,21 @@ export default function RootLayout() {
     return null;
   }
 
+  const { isVisible, path } = useFloatingButtonVisiblity();
+
   return (
     <PaperProvider theme={paperTheme}>
       <ThemeProvider value={paperTheme}>
-        <Stack>
-          <Stack.Screen name='(auth)' options={{ headerShown: false }} />
-          <Stack.Screen name='(home)' options={{ headerShown: false }} />
-          <Stack.Screen name='+not-found' />
-        </Stack>
+        <RootSiblingParent>
+          <Stack>
+            <Stack.Screen name='(auth)' options={{ headerShown: false }} />
+            <Stack.Screen name='(home)' options={{ headerShown: false }} />
+            <Stack.Screen name='+not-found' />
+          </Stack>
+          {/* <View>
+            <Text>{path}</Text>
+          </View> */}
+        </RootSiblingParent>
       </ThemeProvider>
     </PaperProvider>
   );

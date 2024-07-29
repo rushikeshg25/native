@@ -22,6 +22,7 @@ export function Collapsible({
         <Ionicons
           name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
           size={18}
+          //@ts-ignore
           color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
         />
         <ThemedText type='defaultSemiBold'>{title}</ThemedText>

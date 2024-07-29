@@ -19,7 +19,7 @@ export default function AdjustSplit() {
     { key: splitMethods.PERCENTAGE, icon: 'percent' },
     { key: splitMethods.SHARES, icon: 'pie-chart-outline' },
   ]);
-  const [superHeroes, setSuperHeroes] = useState([]);
+  const [superHeroes, setSuperHeroes] = useState<any>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function AdjustSplit() {
             labelStyle={{ color: theme.colors.primary }}
             renderIcon={({ route, focused, color }) => (
               <MaterialIcons
-                name={route.icon}
+                name={route.icon as any}
                 size={30}
                 color={focused ? theme.colors.primary : theme.colors.secondary}
               />

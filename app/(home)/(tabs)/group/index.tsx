@@ -1,10 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useRef, useState } from 'react';
-import { ScrollView, View, StyleSheet, Dimensions } from 'react-native';
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Dimensions,
+  Pressable,
+} from 'react-native';
 import { Button, Text } from 'react-native-paper';
 import GroupCard from '@/components/Groups/GroupCard';
 import Avatar from '@/components/Avatar';
-import { useNavigation } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { GroupData } from '@/utils/GroupData';
 import PageWrapperView from '@/components/PageWrapperView';
 import ScrollableCard from '@/components/ScrollableCard';
@@ -24,7 +30,7 @@ const SCROLL_DISTANCE = MAX_HEIGHT - MIN_HEIGHT;
 const { width } = Dimensions.get('window');
 
 export default function App() {
-  const navigation = useNavigation();
+  const router = useRouter();
   const toggleInactiveGroups = () => {};
   const [currecy, setCurrency] = useState<string>('₹');
   const scrollRef = useAnimatedRef<Animated.ScrollView>();
@@ -57,25 +63,33 @@ export default function App() {
           className='flex flex-col justify-between px-3 pt-3'
           style={[styles.animatedContainer, topAnimatedStyle]}
         >
-          <View className='flex flex-row justify-between w-full px-3'>
+          <View className='flex flex-row items-center justify-between w-full px-3'>
             <View className='flex flex-col'>
-              <Text className='-mb-1 text-lg font-semibold'>
+              <Text className='text-2xl font-extrabold'>
+                Welcome, Username 👋{' '}
+              </Text>
+              <Text className='text-lg font-semibold '>
                 You owe{' '}
                 <Text className='text-lg font-bold text-red-400'>{`${currecy}${owed} `}</Text>
               </Text>
-              <Text className='-mt-1 text-lg font-semibold'>
+              <Text className='-mt-2 text-lg font-semibold'>
                 and you are owned{' '}
                 <Text className='text-lg font-bold text-green-400'>{`${currecy}${owned} `}</Text>
               </Text>
             </View>
-            <View className='flex items-center justify-center mb-10'>
+            <Pressable
+              className='flex items-center justify-center h-full'
+              onPress={() => {
+                router.push('/account');
+              }}
+            >
               <Avatar
                 source={{
                   uri: 'https://userpic.codeforces.org/2074766/title/7c6bd92a5d4bdad.jpg',
                 }}
-                size={40}
+                size={50}
               />
-            </View>
+            </Pressable>
           </View>
         </Animated.View>
         <ScrollableCard classname='px-3 pt-3 dark:bg-purple-dark bg-purple-light'>

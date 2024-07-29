@@ -7,6 +7,8 @@ import Avatar from '@/components/Avatar';
 import FloatingButton from '@/components/FloatingAddExpense';
 import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
 import Header from '@/components/Header';
+import { Text } from 'react-native-paper';
+import { View } from 'react-native';
 
 export default function TabLayout() {
   const { isVisible } = useFloatingButtonVisiblity();

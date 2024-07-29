@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 
-const CurrencyButton = ({ customStyles }) => {
+const CurrencyButton = ({ customStyles }: { customStyles: any }) => {
   const [currency, setCurrency] = useState('IN');
 
   const toggleCurrency = () => {

@@ -1,5 +1,5 @@
 import { cn } from '@/utils/tw-merge';
-import { Platform, StatusBar, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 export default function PageWrapperView(props: {
   children: React.ReactNode;

@@ -42,7 +42,7 @@ const Header = ({ page }: Props) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              router.push('/create-group');
+              router.push('/createGroup');
             }}
           >
             <AntDesign

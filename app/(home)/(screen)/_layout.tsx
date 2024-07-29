@@ -12,6 +12,10 @@ export default function Layout() {
         name='addExpense/adjustSplit'
         options={{ title: 'Adjust split' }}
       />
+      <Stack.Screen
+        name='createGroup/index'
+        options={{ title: 'Create a group' }}
+      />
       <Stack.Screen name='scan' options={{ title: 'Scan' }} />
     </Stack>
   );

@@ -18,7 +18,7 @@ import {
 } from '@react-navigation/native';
 import { Colors } from '@/constants/Colors';
 import merge from 'deepmerge';
-import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
+// import { useFloatingButtonVisiblity } from '@/hooks/useFloatingButtonVisiblity';
 
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,
@@ -52,7 +52,7 @@ export default function RootLayout() {
     return null;
   }
 
-  const { isVisible, path } = useFloatingButtonVisiblity();
+  // const { isVisible, path } = useFloatingButtonVisiblity();
 
   return (
     <PaperProvider theme={paperTheme}>
